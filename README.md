@@ -36,7 +36,7 @@ require"interesting_files".navigate(n)
 
 To map it, you can do
 
-```vimscript
+```vim
 nnoremap <space> <cmd>lua require"interesting_files".navigate(vim.v.count1)<CR>
 ```
 
