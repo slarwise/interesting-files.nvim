@@ -9,7 +9,7 @@ Plug 'slarwise/interesting-files.nvim'
 ```
 
 Can be used as a [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-by doing 
+extension by doing 
 
 ```lua
 require('telescope').load_extension('args')
