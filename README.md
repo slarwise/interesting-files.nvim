@@ -1,6 +1,6 @@
 # interesting-files.nvim
 
-Bookmark and navigate between your favorite files.
+Bookmark and navigate between your favorite files in neovim.
 
 ## Setup
 
