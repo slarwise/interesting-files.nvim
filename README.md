@@ -43,11 +43,3 @@ nnoremap <space> <cmd>lua require"interesting_files".navigate(vim.v.count1)<CR>
 This will let you go to the nth interesting file by pressing a number and then
 space, e.g. `3<space>` takes you to the third file. If you don't prefix it with
 a number, it will go to the first file.
-
-## TODO
-
-Add a setup function so the user can configure
-
-- [ ] The location of the file to read interesting files from.
-- [ ] Have multiple such files, concatenate the file names. Should be able to
-  handle files not existing.
