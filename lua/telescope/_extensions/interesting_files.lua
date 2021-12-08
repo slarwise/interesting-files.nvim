@@ -12,14 +12,15 @@ local interesting_files = require "interesting_files"
 local finder = function(opts)
     opts = opts or {}
 
-    io.input(interesting_files.config.locations)
+    local locations = interesting_files.config.locations
+    io.input(locations)
     files = {}
     for line in io.lines() do
         table.insert(files, line)
     end
 
     if not next(files) then
-        print("No files found in interesting-files")
+        print(string.format("No files found in %s", locations))
         return
     end
 

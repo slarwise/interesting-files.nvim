@@ -1,14 +1,16 @@
 local M = {}
 
 function M.navigate(nr)
-    io.input(M.config.locations)
+    local locations = M.config.locations
+
+    io.input(locations)
     files = {}
     for line in io.lines() do
         table.insert(files, line)
     end
 
     if not next(files) then
-        print("No files found in ./interesting-files")
+        print(string.format("No files found in %s", locations))
         return
     end
 
