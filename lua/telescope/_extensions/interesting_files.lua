@@ -9,7 +9,7 @@ local conf = require("telescope.config").values
 local make_entry = require "telescope.make_entry"
 local interesting_files = require "interesting_files"
 
-local interesting_files = function(opts)
+local finder = function(opts)
     opts = opts or {}
 
     io.input(interesting_files.config.locations)
@@ -34,5 +34,5 @@ local interesting_files = function(opts)
 end
 
 return telescope.register_extension {
-    exports = { interesting_files = interesting_files },
+    exports = { interesting_files = finder },
 }
