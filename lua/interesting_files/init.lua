@@ -1,7 +1,7 @@
-local interesting_files = {}
+local M = {}
 
-function interesting_files.navigate(nr)
-    io.input(interesting_files.config.locations)
+function M.navigate(nr)
+    io.input(M.config.locations)
     files = {}
     for line in io.lines() do
         table.insert(files, line)
@@ -21,7 +21,7 @@ function interesting_files.navigate(nr)
     pcall(vim.cmd, string.format("edit %s", file))
 end
 
-function interesting_files.setup(opts)
+function M.setup(opts)
     opts = opts or {}
     config = {}
     if opts.locations then
@@ -31,7 +31,7 @@ function interesting_files.setup(opts)
         config.locations = "./interesting-files"
     end
 
-    interesting_files.config = config
+    M.config = config
 end
 
-return interesting_files
+return M
