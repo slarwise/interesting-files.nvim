@@ -19,10 +19,10 @@ function M.setup(opts)
     opts = opts or {}
     config = {}
     if opts.locations then
-        assert(type(opts.locations) == "string", "opts.locations must be a string")
+        assert(type(opts.locations) == "table", "opts.locations must be a table")
         config.locations = opts.locations
     else
-        config.locations = "interesting-files"
+        config.locations = {"interesting-files"}
     end
 
     M.config = config

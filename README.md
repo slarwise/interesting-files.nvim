@@ -10,7 +10,7 @@ Plug 'slarwise/interesting-files.nvim'
 
 ```lua
 require "interesting_files".setup({
-    locations = "interesting-files"
+    locations = { "interesting-files", } -- A list of file paths to read from
 })
 ```
 
