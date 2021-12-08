@@ -1,18 +1,10 @@
+local utils = require "interesting_files.utils"
 local M = {}
 
 function M.navigate(nr)
     local locations = M.config.locations
 
-    io.input(locations)
-    files = {}
-    for line in io.lines() do
-        table.insert(files, line)
-    end
-
-    if not next(files) then
-        print(string.format("No files found in %s", locations))
-        return
-    end
+    local files = utils.get_interesting_files(locations)
 
     if nr > #files then
         print(string.format("There are only %s interesting files", #files))

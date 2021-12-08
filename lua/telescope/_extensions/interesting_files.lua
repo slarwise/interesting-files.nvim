@@ -8,21 +8,14 @@ local finders = require "telescope.finders"
 local conf = require("telescope.config").values
 local make_entry = require "telescope.make_entry"
 local interesting_files = require "interesting_files"
+local utils = require "interesting_files.utils"
 
 local finder = function(opts)
     opts = opts or {}
 
     local locations = interesting_files.config.locations
-    io.input(locations)
-    files = {}
-    for line in io.lines() do
-        table.insert(files, line)
-    end
 
-    if not next(files) then
-        print(string.format("No files found in %s", locations))
-        return
-    end
+    local files = utils.get_interesting_files(locations)
 
     pickers.new(opts, {
         prompt_title = "Args",
