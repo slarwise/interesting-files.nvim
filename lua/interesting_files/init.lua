@@ -30,7 +30,7 @@ function M.setup(opts)
         assert(type(opts.locations) == "string", "opts.locations must be a string")
         config.locations = opts.locations
     else
-        config.locations = "./interesting-files"
+        config.locations = "interesting-files"
     end
 
     M.config = config
