@@ -1,7 +1,7 @@
 local interesting_files = {}
 
 function interesting_files.navigate(nr)
-    io.input("interesting-files")
+    io.input(interesting_files.config.locations)
     files = {}
     for line in io.lines() do
         table.insert(files, line)
@@ -19,6 +19,19 @@ function interesting_files.navigate(nr)
 
     local file = files[nr]
     pcall(vim.cmd, string.format("edit %s", file))
+end
+
+function interesting_files.setup(opts)
+    opts = opts or {}
+    config = {}
+    if opts.locations then
+        assert(type(opts.locations) == "string", "opts.locations must be a string")
+        config.locations = opts.locations
+    else
+        config.locations = "./interesting-files"
+    end
+
+    interesting_files.config = config
 end
 
 return interesting_files

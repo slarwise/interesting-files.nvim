@@ -7,11 +7,12 @@ local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
 local conf = require("telescope.config").values
 local make_entry = require "telescope.make_entry"
+local interesting_files = require "interesting_files"
 
 local interesting_files = function(opts)
     opts = opts or {}
 
-    io.input("interesting-files")
+    io.input(interesting_files.config.locations)
     files = {}
     for line in io.lines() do
         table.insert(files, line)
