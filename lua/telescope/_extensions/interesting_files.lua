@@ -18,7 +18,7 @@ local finder = function(opts)
     local files = utils.get_interesting_files(locations)
 
     pickers.new(opts, {
-        prompt_title = "Args",
+        prompt_title = "Interesting files",
         finder = finders.new_table {
             results = files,
         },
