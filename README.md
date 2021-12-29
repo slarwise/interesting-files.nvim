@@ -15,7 +15,7 @@ require "interesting_files".setup({
 ```
 
 Can be used as a [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-extension by doing 
+extension by doing
 
 ```lua
 require('telescope').load_extension('args')
@@ -30,8 +30,8 @@ file names to it. Now you can navigate to them using Telescope by doing
 :Telescope interesting_files
 ```
 
-Pressing enter on a file will go to that file. The usual Telescope mappings for
-file pickers such as `<C-x>` for opening a file in a horizonal split work as
+Pressing enter on a file goes to that file. The usual Telescope mappings for
+file pickers such as `<C-x>` for opening a file in a horizontal split work as
 usual.
 
 To go to the nth file in `interesting-files`, do
@@ -46,6 +46,6 @@ To map it, you can do
 nnoremap <space> <cmd>lua require"interesting_files".navigate(vim.v.count1)<CR>
 ```
 
-This will let you go to the nth interesting file by pressing a number and then
-space, e.g. `3<space>` takes you to the third file. If you don't prefix it with
-a number, it will go to the first file.
+This lets you go to the nth interesting file by pressing a number and then
+space, for example `3<space>` takes you to the third file. If you don't prefix
+it with a number, it goes to the first file.
